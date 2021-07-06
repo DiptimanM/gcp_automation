@@ -1,0 +1,28 @@
+script:
+
+createsnapshots.py 
+
+inputs:
+
+csv file containing VM names(1st row of the VM name column needs to have text "VM Name")
+source zone of VM
+
+usage: createsnapshots.py [-h] [-csv CSVFILENAME] [-sz SOURCEZONE]
+
+example:
+
+Take ad-hoc snapshots of VMs as listed in csv file.
+
+python3 createsnapshots.py -sz us-east4-a -csv /home/diptiman_mukherjee/python_scripts/zp05_dr_test.csv
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+  -csv CSVFILENAME, --csvfilename CSVFILENAME
+                        enter csv file name(full path if file is at a different location)
+  
+  -sz SOURCEZONE, --sourcezone SOURCEZONE
+                        enter source zone where vm is hosted(e.g. us-east4-a)
+						
+
+

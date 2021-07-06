@@ -1,0 +1,44 @@
+script:
+
+create_vm.py 
+
+action executed:
+
+1> Finds all disks attached to the VM.
+2> Creates disks in target region/zone from latest available snapshots of given date.
+3> Creates VM and attaches data disks.
+4> Copies and appends network tags from source VM
+5> Copies and appends labels from source VM
+
+inputs:
+
+csv file containing VM names, target subnet name, target IP addresses - (1st row of the csv file needs to be as the sample file.)
+source zone of VM
+target zone of VM
+target region of VM
+target project id of VM
+network project id 
+
+usage: create_vm.py [-h] [-csv CSVFILENAME] [-tr TARGETREGION]
+                    [-tp TARGETPROJECTID] [-np NWHOSTPROJECT] [-sz SOURCEZONE]
+                    [-tz TARGETZONE]
+
+example:
+
+python3 create_vm.py -csv /home/diptiman_mukherjee/python_scripts/dr_test.csv -tr us-east4 -tp gcp-zp04-usea4-prod-proj -np gcp-zp04-global-net-proj -sz us-west2-a -tz us-east4-a
+
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -csv CSVFILENAME, --csvfilename CSVFILENAME
+                        enter path to csv file
+  -tr TARGETREGION, --targetregion TARGETREGION
+                        enter target region
+  -tp TARGETPROJECTID, --targetprojectid TARGETPROJECTID
+                        enter target project id
+  -np NWHOSTPROJECT, --nwhostproject NWHOSTPROJECT
+                        enter network host project id
+  -sz SOURCEZONE, --sourcezone SOURCEZONE
+                        enter target region
+  -tz TARGETZONE, --targetzone TARGETZONE
+                        enter target region
