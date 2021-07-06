@@ -1,0 +1,4 @@
+VM Name,Target Subnet,Target IP address
+gcp-zp04-usea4-c-vm-vscdossm3ap1t,gcp-zp04-uswe2-prod-dr-snet-app,10.21.6.11
+gcp-zp04-usea4-c-vm-vsgcpha1app1,gcp-zp04-uswe2-prod-dr-snet-app,10.21.6.12
+gcp-zp04-usea4-c-vm-vscdossm4ap1t,gcp-zp04-uswe2-prod-dr-snet-app,10.21.6.13

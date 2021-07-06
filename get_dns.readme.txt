@@ -1,0 +1,49 @@
+script:
+
+get_dns.py 
+
+inputs:
+
+source project id of VM
+host network project in case of shared VPC
+source zone of VM
+name of forward dnszone
+name of reverse dnszone
+csv file containing VM names(1st row of the VM name column needs to have text "VM Name")
+
+usage: get_dns.py [-h] [-sp SOURCEPROJECTID] [-np NWHOSTPROJECT]
+                  [-sz SOURCEZONE] [-fd FORWARDDNSZONE] [-rd REVERSEDNSZONE]
+                  [-csv CSVFILENAME]
+
+example:
+
+Fetch DNS name of VMs in zone us-east4-a from csv file
+
+python3 get_dns.py -sp gcp-zp04-usea4-prod-proj -np gcp-zp04-global-net-proj -sz us-east4-a -fd gcp-zp04-global-dns-jklcorp -rd gcp-zp04-global-dns-reverse-21-10 -csv /home/diptiman_mukherjee/python_scripts/zp05_dr_test.csv
+
+optional arguments:
+
+  -h, --help            show this help message and exit
+  
+  -sp SOURCEPROJECTID, --sourceprojectid SOURCEPROJECTID
+                        enter target project id(e.g. gcp-<rid>-<region>-dev-proj
+  
+  -np NWHOSTPROJECT, --nwhostproject NWHOSTPROJECT
+						enter network host project id(e.g. gcp-<rid>-global-net-proj)
+  
+  -sz SOURCEZONE, --sourcezone SOURCEZONE
+                        enter source zone of VM(e.g. us-east4-a)
+  
+  -fd FORWARDDNSZONE, --forwarddnszone FORWARDDNSZONE
+                        enter forward dns zone name
+  
+  -rd REVERSEDNSZONE, --reversednszone REVERSEDNSZONE
+                        enter reverse dns zone name
+  
+  -csv CSVFILENAME, --csvfilename CSVFILENAME
+                        enter name of csv file (full path if file is in other
+                        location)
+						
+
+
+
