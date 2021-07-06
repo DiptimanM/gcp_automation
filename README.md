@@ -1,7 +1,15 @@
 # gcp_automation
 Python scripts for GCP automation
 
-README file for all scripts:
+Following scripts are present:
+
+create_vm.py – python script to create VMs in target region/zone from latest available disk snapshots of disks in the source region/zone. The script creates disks from snapshots and then creates the VM and attaches the disks. Once done, it copies the network tags and the labels of the source VM and applies the same on the target VM.
+
+set_dns.py – python script to modify forward and reverse lookup entries against VM name and specified IP address.
+
+get_dns.py – python script to fetch forward and reverse lookup entries against VM name.
+
+create_snapshots.py – python script to create snapshots of all disks for VMs listed in csv file.
 
 Common points to be kept in mind:
 
